@@ -13,6 +13,7 @@ import Button from "../Button";
 import { FcGoogle } from "react-icons/fc"
 import useLoginModal from "../hooks/useLoginModal";
 import { useRouter } from "next/navigation";
+import { AiFillGithub } from "react-icons/ai";
 
 const LoginModal = () => {
     const router = useRouter();
@@ -86,7 +87,13 @@ const LoginModal = () => {
                 outline
                 label="Continue with Google"
                 icon={FcGoogle}
-                onClick={() => {}}
+                onClick={() => signIn('google')}
+            />
+            <Button
+                outline
+                label="Continue with GitHub"
+                icon={AiFillGithub}
+                onClick={() => signIn('github')}
             />
             <div className="justify-center flex items-center gap-2">
                 <div>Already have an account?</div>
