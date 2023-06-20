@@ -1,7 +1,7 @@
 'use client';
 
 import { signIn } from "next-auth/react"
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import useRegisetModal from "../hooks/useRegisterModal";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
@@ -57,6 +57,11 @@ const LoginModal = () => {
         })
     }
 
+    const toggle = useCallback(() => {
+        loginModal.onClose();
+        registerModal.onOpen();
+    }, [loginModal, registerModal])
+
     const bodyContent = (
         <div className="flex flex-col gap-4">
             <Heading title="Welcome Back" subtitle="Login to your acount" />
@@ -96,8 +101,10 @@ const LoginModal = () => {
                 onClick={() => signIn('github')}
             />
             <div className="justify-center flex items-center gap-2">
-                <div>Already have an account?</div>
-                <div onClick={registerModal.onClose} className="text-neutral-800 cursor-pointer hover:underline">Log in</div>
+                <div>First time using Venus Rental?</div>
+                <div onClick={toggle} className="text-neutral-800 cursor-pointer hover:underline">
+                    Create an Account
+                </div>
             </div>
         </div>
     )
