@@ -35,14 +35,14 @@ const Button: React.FC<ButtonProps> = ({
                 ${outline ? 'bg-white' : 'bg-pink-400'}
                 ${outline ? 'border-black' : 'border-pink-400'}
                 ${outline ? 'text-black' : 'text-white'}
-                ${small ? 'py-1' : 'py-3'}
+                ${small ? 'py-1' : 'py-2'}
                 ${small ? 'text-sm' : 'text-md'}
                 ${small ? 'font-light' : 'font-semibold'}
                 ${small ? 'border-[1px]' : 'border-2'}
             `}
         >
             {Icon && (
-                <Icon size={24} className="absolute left-4 top-3 " />
+                <Icon size={24} className="absolute left-4 top-2 " />
             )}
             {label}
         </button>

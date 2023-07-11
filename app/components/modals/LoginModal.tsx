@@ -63,8 +63,8 @@ const LoginModal = () => {
     }, [loginModal, registerModal])
 
     const bodyContent = (
-        <div className="flex flex-col gap-4">
-            <Heading title="Welcome Back" subtitle="Login to your acount" />
+        <div className="flex flex-col gap-3">
+            {/* <Heading title="Welcome Back" subtitle="Login to your acount" /> */}
             <Input
                 id="email"
                 label="Email"
@@ -94,15 +94,15 @@ const LoginModal = () => {
                 icon={FcGoogle}
                 onClick={() => signIn('google')}
             />
-            <Button
+            {/* <Button
                 outline
                 label="Continue with GitHub"
                 icon={AiFillGithub}
                 onClick={() => signIn('github')}
-            />
+            /> */}
             <div className="justify-center flex items-center gap-2">
-                <div>First time using Venus Rental?</div>
-                <div onClick={toggle} className="text-neutral-800 cursor-pointer hover:underline">
+                <div>First time using Venus?</div>
+                <div onClick={toggle} className="text-neutral-200 cursor-pointer hover:underline">
                     Create an Account
                 </div>
             </div>
@@ -113,8 +113,8 @@ const LoginModal = () => {
         <Modal
             disabled={isLoading}
             isOpen={loginModal.isOpen}
-            title="Login"
-            actionLabel="Continue"
+            title="Welcome back"
+            actionLabel="Log in"
             onClose={loginModal.onClose}
             onSubmit={handleSubmit(onSubmit)}
             body={bodyContent}

@@ -17,9 +17,9 @@ export const categories = [
         description: 'This property is close to the beach!'
     },
     {
-        label: 'Windmills',
-        icon: GiWindmill,
-        description: 'This property has windmills!'
+        label: 'Pools',
+        icon: TbPool,
+        description: 'This property has a pool!'
     },
     {
         label: 'Modern',
@@ -31,10 +31,11 @@ export const categories = [
         icon: TbMountain,
         description: 'This property is in the country side!'
     },
+    
     {
-        label: 'Pools',
-        icon: TbPool,
-        description: 'This property has a pool!'
+        label: 'Windmills',
+        icon: GiWindmill,
+        description: 'This property has windmills!'
     },
     {
         label: 'Islands',
@@ -101,7 +102,7 @@ const Categories = () => {
 
     return (
         <Container>
-            <div className="pt-4 flex items-center justify-between overflow-x-auto">
+            <div className="flex items-center justify-between overflow-x-auto">
                 {categories.map((item) => (
                     <CategoryBox
                         key={item.label}

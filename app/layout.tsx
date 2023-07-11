@@ -24,13 +24,13 @@ export default async function RootLayout({
   const currentUser = await getCurrentUser();
   return (
     <html lang="en">
-      <body className={nunito.className}>
+      <body className={`${nunito.className} bg-black text-white`}>
         <ToasterProvider />
         <RentModal />
         <LoginModal />
         <RegisterModal />
         <Navbar currentUser={currentUser} />
-        <div className="pb-20 pt-20">
+        <div className="pb-20 pt-20 ">
           {children}
         </div>
       </body>

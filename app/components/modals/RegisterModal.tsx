@@ -11,8 +11,8 @@ import toast from "react-hot-toast";
 import Button from "../Button";
 import { FcGoogle } from "react-icons/fc"
 import { signIn } from "next-auth/react";
-import { AiFillGithub } from "react-icons/ai";
 import useLoginModal from "../hooks/useLoginModal";
+
 
 const RegisterModal = () => {
 
@@ -92,13 +92,13 @@ const RegisterModal = () => {
             <hr />
             <Button
                 outline
-                label="Continue with GitHub"
-                icon={AiFillGithub}
-                onClick={() => signIn('github')}
+                label="Continue with Google"
+                icon={FcGoogle}
+                onClick={() => signIn('google')}
             />
             <div className="justify-center flex items-center gap-2">
                 <div>Already have an account?</div>
-                <div onClick={toggle} className="text-neutral-800 cursor-pointer hover:underline">Log in</div>
+                <div onClick={toggle} className="text-neutral-200 font-bold cursor-pointer hover:underline">Log in</div>
             </div>
         </div>
     )
