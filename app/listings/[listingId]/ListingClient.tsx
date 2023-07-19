@@ -29,15 +29,10 @@ interface ListingClientProps {
     reservations?: SafeReservation[];
     listing: SafeListing & {
         user: SafeUser,
-        description: string;
-        guestCount: number;
-        roomCount: number;
-        bathroomCount: number;
-        category: {
-            icon: IconType;
-            label: string;
-            description: string;
-        } | undefined
+        // description: string;
+        // guestCount: number;
+        // roomCount: number;
+        // bathroomCount: number;
     }
     currentUser?: SafeUser | null
 }
@@ -45,7 +40,8 @@ interface ListingClientProps {
 const ListingClient: React.FC<ListingClientProps> = ({
     listing,
     reservations = [],
-    currentUser
+    currentUser,
+
 }) => {
     const loginModal = useLoginModal();
     const router = useRouter();
