@@ -5,7 +5,9 @@ import Button from '../Button';
 import Calendar from '../inputs/Calendar';
 
 interface ListingReservationProps {
-    price: number;
+    room: number;
+    bathroom: number;
+    guest: number;
     dateRange: Range;
     totalPrice: number;
     onChangeDate: (value: Range) => void;
@@ -15,7 +17,9 @@ interface ListingReservationProps {
 }
 
 const ListingReservation: React.FC<ListingReservationProps> = ({
-    price,
+    room,
+    bathroom,
+    guest,
     dateRange,
     totalPrice,
     onChangeDate,
@@ -24,33 +28,37 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
     disabledDates
 }) => {
     return (
-        <div className="bg-white rounded-xl border-[1px] border-neutral-200 overflow-hidden">
-            <div className="flex items-center gap-1 p-4">
-                <div className="text-2xl font-semibold">
-                    $ {price}
-                </div>
-                <div className="font-light text-neutral-600">
-                    night
-                </div>
-            </div>
-            <hr />
+        <div className=" rounded-xl w-full border-[1px] flex gap-8 mb-4 border-neutral-200 overflow-hidden">
             <Calendar
                 value={dateRange}
                 disabledDates={disabledDates}
                 onChange={(value) => onChangeDate(value.selection)}
             />
-            <hr />
-            <div className="p-4">
+            <div className="flex w-[75%] flex-col gap-4 py-3 mr-5">
+                <div className="flex items-center justify-between text-lg">
+                    <div>Bedroom:</div>
+                    <div>{room}</div>
+                </div>
+                <div className="flex items-center justify-between text-lg">
+                    <div>Bathroom:</div>
+                    <div>{bathroom}</div>
+                </div>
+                <div className="flex items-center justify-between text-lg">
+                    <div>Guest allowed:</div>
+                    <div>{guest}</div>
+                </div>
+                <hr />
+                <div className="flex items-center  justify-between font-semibold text-lg">
+                    <div>Total Price</div>
+                    <div>$ {totalPrice}</div>
+                </div>
                 <Button
                     disabled={disabled}
                     label="Reserve"
                     onClick={onSubmit}
                 />
             </div>
-            <div className="p-4 flex items-center justify-between font-semibold text-lg">
-                <div>Total</div>
-                <div>$ {totalPrice}</div>
-            </div>
+            
         </div>
     )
 }
